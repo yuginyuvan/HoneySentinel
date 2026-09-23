@@ -1,0 +1,425 @@
+/* ============================================================
+   AI THREAT ANALYSIS PAGE
+   ============================================================ */
+
+.ai-analysis__topRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+
+/* ============================================================
+   COMMON CARD
+   ============================================================ */
+
+.ai-analysis__card {
+  padding: 20px;
+  min-width: 0;
+}
+
+.ai-analysis__cardTitle {
+  margin: 0 0 18px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+
+/* ============================================================
+   LABELS / VALUES
+   ============================================================ */
+
+.ai-analysis__label {
+  display: block;
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.ai-analysis__value {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.ai-analysis__highLevel {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.ai-analysis__confidence {
+  margin: 0 0 9px 0;
+  font-size: 19px;
+  font-weight: 700;
+  color: #00e5ff;
+}
+
+
+/* ============================================================
+   DIVIDERS
+   ============================================================ */
+
+.ai-analysis__divider {
+  height: 1px;
+  background: rgba(148, 163, 184, 0.12);
+  margin: 14px 0;
+}
+
+
+/* ============================================================
+   CONFIDENCE BAR
+   ============================================================ */
+
+.ai-analysis__progressBar {
+  width: 100%;
+  height: 5px;
+  border-radius: 10px;
+  background: #17212b;
+  overflow: hidden;
+}
+
+.ai-analysis__progressFill {
+  height: 100%;
+  border-radius: inherit;
+  background: #00e5ff;
+  transition: width 0.5s ease;
+}
+
+
+/* ============================================================
+   AI CLASSIFICATION
+   ============================================================ */
+
+.ai-analysis__classRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 42px;
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.ai-analysis__classRow:last-child {
+  border-bottom: none;
+}
+
+.ai-analysis__classVal {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+
+/* ============================================================
+   LIVE COMMAND ANALYSIS
+   ============================================================ */
+
+.ai-analysis__commandCard {
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.ai-analysis__sectionDescription {
+  margin: -8px 0 16px 0;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+
+/* ============================================================
+   COMMAND LIST
+   ============================================================ */
+
+.ai-analysis__commandList {
+  width: 100%;
+  max-height: 360px;
+  overflow-y: auto;
+
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 8px;
+
+  background: rgba(2, 6, 23, 0.35);
+}
+
+
+/* scrollbar */
+
+.ai-analysis__commandList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ai-analysis__commandList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ai-analysis__commandList::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+
+/* ============================================================
+   COMMAND ROW
+   ============================================================ */
+
+.ai-analysis__commandRow {
+  display: grid;
+
+  grid-template-columns:
+    70px
+    150px
+    minmax(250px, 1fr)
+    80px;
+
+  align-items: center;
+
+  gap: 14px;
+
+  min-height: 45px;
+
+  padding: 0 14px;
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.10);
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.ai-analysis__commandRow:last-child {
+  border-bottom: none;
+}
+
+.ai-analysis__commandRow:hover {
+  background: rgba(30, 41, 59, 0.55);
+}
+
+.ai-analysis__commandRow--selected {
+  background: rgba(0, 229, 255, 0.07);
+  border-left: 2px solid #00e5ff;
+}
+
+
+/* ============================================================
+   COMMAND TEXT
+   ============================================================ */
+
+.ai-analysis__commandText {
+  color: #e2e8f0;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font-size: 12px;
+}
+
+
+/* ============================================================
+   STATUS PILL
+   ============================================================ */
+
+.ai-analysis__commandRow .status-pill {
+  justify-self: start;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 58px;
+
+  padding: 4px 8px;
+
+  border-radius: 4px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  border: 1px solid rgba(245, 158, 11, 0.45);
+
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.08);
+}
+
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
+.ai-analysis__empty {
+  margin: 0;
+  padding: 30px;
+
+  text-align: center;
+
+  color: #64748b;
+  font-size: 13px;
+}
+
+
+/* ============================================================
+   COMMAND THREAT ANALYSIS
+   ============================================================ */
+
+.ai-analysis__detailCard {
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.ai-analysis__detailGrid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 0 30px;
+
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+
+/* ============================================================
+   DETAIL ITEM
+   ============================================================ */
+
+.ai-analysis__detailItem {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 78px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.ai-analysis__detailValue {
+  color: #f8fafc;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+.ai-analysis__value--danger {
+  color: #ff6b6b;
+  font-weight: 700;
+}
+
+
+/* ============================================================
+   RECOMMENDATION INSIDE COMMAND ANALYSIS
+   ============================================================ */
+
+.ai-analysis__recommendation {
+  margin-top: 18px;
+
+  padding: 15px;
+
+  border: 1px solid rgba(0, 229, 255, 0.14);
+
+  border-radius: 7px;
+
+  background: rgba(0, 229, 255, 0.035);
+}
+
+.ai-analysis__recommendationText {
+  margin: 6px 0 0 0;
+
+  color: #f8fafc;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   MAIN RECOMMENDATION CARD
+   ============================================================ */
+
+.ai-analysis__recommendCard {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.ai-analysis__recItem {
+  display: flex;
+  align-items: center;
+
+  min-height: 42px;
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.10);
+}
+
+.ai-analysis__recItem:last-child {
+  border-bottom: none;
+}
+
+.ai-analysis__bullet {
+  width: 20px;
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+}
+
+.ai-analysis__recText {
+  color: #e2e8f0;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+  .ai-analysis__topRow {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-analysis__commandRow {
+    grid-template-columns:
+      65px
+      120px
+      minmax(180px, 1fr)
+      70px;
+
+    gap: 10px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .ai-analysis__detailGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-analysis__commandRow {
+    grid-template-columns:
+      55px
+      minmax(150px, 1fr)
+      65px;
+  }
+
+  .ai-analysis__commandRow > span:nth-child(2) {
+    display: none;
+  }
+
+}

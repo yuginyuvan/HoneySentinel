@@ -1,0 +1,21 @@
+.attacks__card {
+  padding: 22px 24px;
+}
+
+.attacks__cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.attacks__cardTitle {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.attacks__count {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}

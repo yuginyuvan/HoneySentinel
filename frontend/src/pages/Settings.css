@@ -1,0 +1,102 @@
+.settings__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.settings__card {
+  padding: 22px 24px;
+}
+.settings__cardTitle {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #e3ecf3;
+  margin-bottom: 14px;
+}
+.settings__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 0;
+  border-bottom: 1px solid #16212c;
+}
+.settings__row:last-child {
+  border-bottom: none;
+}
+.settings__key {
+  font-size: 13px;
+  color: #969a9f;
+}
+.settings__val {
+  font-size: 13.5px;
+  color: #e3ecf3;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.settings__val--green {
+  color: var(--green, #33e59f);
+  font-weight: 600;
+}
+.settings__val--cyan {
+  color: var(--cyan, #4fc3f7);
+  font-weight: 600;
+}
+.settings__val--amber {
+  color: var(--amber, #ffb648);
+  font-weight: 600;
+}
+.settings__val--red {
+  color: var(--red, #ff5470);
+  font-weight: 600;
+}
+.settings__dot--green {
+  background: var(--green, #33e59f);
+}
+.settings__dot--cyan {
+  background: var(--cyan, #4fc3f7);
+}
+.settings__dot--amber {
+  background: var(--amber, #ffb648);
+}
+.settings__dot--red {
+  background: var(--red, #ff5470);
+}
+.settings__fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+.settings__fieldLabel {
+  font-size: 12.5px;
+  color: #eff2f6;
+}
+.settings__input {
+  background: #050810;
+  border: 1px solid #a4a6a8;
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: #e3ecf3;
+  font-size: 13.5px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.settings__input:focus {
+  border-color: #cacfcd;
+  box-shadow: 0 0 0 3px rgba(150, 154, 152, 0.18);
+}
+.settings__saveBtn {
+  background: #0ce5f5;
+  color: #06130d;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 20px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: filter 0.15s ease;
+}
+.settings__saveBtn:hover {
+  filter: brightness(1.08);
+}
